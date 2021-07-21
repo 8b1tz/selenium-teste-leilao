@@ -5,6 +5,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import br.com.alura.leilao.leiloes.LeiloesPage;
+
 public class LoginPage {
 
 	private WebDriver browser;
@@ -25,8 +27,9 @@ public class LoginPage {
 		browser.findElement(By.id("password")).sendKeys(password);
 	}
 
-	public void efetuLogin() {
+	public LeiloesPage efetuaLogin() {
 		browser.findElement(By.id("login-form")).submit();
+		return new LeiloesPage(browser);
 	}
 
 	public boolean isUrlLogin() {
